@@ -41,7 +41,7 @@ public struct Mnemonic: Equatable, Hashable {
     
     // Generate BIP39 Seed
     public func seed(password: String = "", wordlist: Wordlist = .english) -> [UInt8] {
-        let mnemonic = Array(mnemonic(wordlist: wordlist).joined(separator: " ").utf8)
+        let mnemonic = Array(self.mnemonic(wordlist: wordlist).joined(separator: " ").utf8)
         let salt = Array(("mnemonic" + password).utf8)
         return try! PBKDF2.sha512(password: mnemonic, salt: salt)
     }
