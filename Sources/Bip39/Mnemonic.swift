@@ -16,7 +16,7 @@ public struct Mnemonic: Equatable, Hashable {
     
     public let entropy: [UInt8]
     
-    public init(strength: Int = 128, wordlist: Wordlist = .english) throws {
+    public init(strength: Int = 128) throws {
         guard strength >= 32, strength <= 256, strength % 32 == 0 else {
             throw Error.invalidStrengthSize
         }
