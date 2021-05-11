@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Bip39.swift'
-  s.version          = '0.0.1'
+  s.version          = '0.1.0'
   s.summary          = 'Cross-platform BIP39 mnemonic implementation for Swift.'
 
   s.description      = <<-DESC
