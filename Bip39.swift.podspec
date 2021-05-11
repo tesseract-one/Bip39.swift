@@ -22,7 +22,7 @@ Cross-platform BIP39 mnemonic implementation for Swift. Supports all Apple platf
 
   s.module_name = 'Bip39'
 
-  s.source_files = 'Sources/Bip39/*.swift'
+  s.source_files = 'Sources/Bip39/**/*.swift'
  
   s.test_spec 'Tests' do |test_spec|
     test_spec.platforms = {:ios => '9.0', :osx => '10.10', :tvos => '9.0'}
