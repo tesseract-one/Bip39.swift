@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Bip39.swift'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Cross-platform BIP39 mnemonic implementation for Swift.'
 
   s.description      = <<-DESC
@@ -23,6 +23,8 @@ Cross-platform BIP39 mnemonic implementation for Swift. Supports all Apple platf
   s.module_name = 'Bip39'
 
   s.source_files = 'Sources/Bip39/**/*.swift'
+  
+  s.dependency 'UncommonCrypto', '~> 0.1.0'
  
   s.test_spec 'Tests' do |test_spec|
     test_spec.platforms = {:ios => '9.0', :osx => '10.10', :tvos => '9.0'}

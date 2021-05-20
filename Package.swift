@@ -10,26 +10,15 @@ var package = Package(
             name: "Bip39",
             targets: ["Bip39"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/tesseract-one/UncommonCrypto.swift.git", from: "0.1.0")
+    ],
     targets: [
         .target(
             name: "Bip39",
-            dependencies: []),
+            dependencies: ["UncommonCrypto"]),
         .testTarget(
             name: "Bip39Tests",
             dependencies: ["Bip39"]),
     ]
 )
-
-#if !canImport(CommonCrypto)
-package.targets.append(
-    .target(
-        name: "CBip39Crypto",
-        dependencies: [],
-        cSettings: [
-            .define("SHA2_UNROLL_TRANSFORM")
-        ]
-    )
-)
-package.targets.first(where: { $0.name == "Bip39" })!.dependencies.append("CBip39Crypto")
-#endif

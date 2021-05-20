@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UncommonCrypto
 
 public struct Mnemonic: Equatable, Hashable {
     public enum Error: Swift.Error {
@@ -43,7 +44,7 @@ public struct Mnemonic: Equatable, Hashable {
     public func seed(password: String = "", wordlist: Wordlist = .english) -> [UInt8] {
         let mnemonic = Array(self.mnemonic(wordlist: wordlist).joined(separator: " ").utf8)
         let salt = Array(("mnemonic" + password).utf8)
-        return try! PBKDF2.sha512(password: mnemonic, salt: salt)
+        return try! PBKDF2.derive(type: .sha512, password: mnemonic, salt: salt)
     }
     
     // Check is mnemonic phrase valid
@@ -123,7 +124,7 @@ public struct Mnemonic: Equatable, Hashable {
         }
         
         let size = entropy.count / 4 // Calculate checksum size.
-        let hash = SHA256.hash(entropy)
+        let hash = SHA2.hash(type: .sha256, bytes: entropy)
         return (hash[0] >> (8 - size), size)
     }
 }
