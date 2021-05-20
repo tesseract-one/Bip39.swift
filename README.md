@@ -10,13 +10,9 @@
 
 Cross-platform BIP39 mnemonic implementation for Swift.
 
-Provides built-in C implementation for SHA256 and PBKDF2 for Linux platform. Implementation copied from [trezor-crypto repository](https://github.com/trezor/trezor-crypto).
-
 ## Installation
 
 Bip39.swift deploys to macOS, iOS, tvOS, watchOS and Linux. It has been tested on the latest OS releases only however, as the module uses very few platform-provided APIs, there should be very few issues with earlier versions.
-
-Bip39.swift can be ported to more platforms. If OS has built-in PBKDF2 and SHA256 APIs they can be used instead of provided C versions. On Apple plaforms library uses CommonCrypto framework. Secure random generator should be ported too.
 
 Setup instructions:
 
