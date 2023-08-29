@@ -20,13 +20,13 @@ Setup instructions:
   Add this to the dependency section of your `Package.swift` manifest:
 
     ```Swift
-    .package(url: "https://github.com/tesseract-one/Bip39.swift.git", from: "0.1.0")
+    .package(url: "https://github.com/tesseract-one/Bip39.swift.git", from: "0.2.0")
     ```
 
 - **CocoaPods:** Put this in your `Podfile`:
 
     ```Ruby
-    pod 'Bip39.swift', '~> 0.1'
+    pod 'Bip39.swift', '~> 0.2'
     ```
 
 ## Usage Examples
